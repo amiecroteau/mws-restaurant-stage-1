@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,7 +17,7 @@
     <h1><a tabindex="1" aria-label="Home" href="/">Restaurant Reviews</a></h1>
   </nav>
 </header>
-<main id="maincontent">
+<main id="maincontent" role="main">
   <section aria-role="application" id="map-container">
     <div id="map"></div>
   </section>
@@ -40,7 +40,7 @@
 <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
 <script type="application/javascript" charset="utf-8" src="sw_register.js"></script>
 <script type="application/javascript" charset="utf-8" src="sw.js"></script>
-<div id='map' style='width: 400px; height: 300px;'></div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW1pZWNyb3RlYXUiLCJhIjoiY2ptaDA1MnA4Mjh1eTNrcjFrNTNxamVkbyJ9.NdW3Z_vjWZj6CrF0qZjPIQ';
 var map = new mapboxgl.Map({

@@ -1,20 +1,7 @@
 // JavaScript Document
 
-console.log('Service Worker:Registered');
 
-self.addEventListener('install', function (e) {
-
-	e.waitUntil(
-		caches.open('v1').then(function (cache) {
-			return cache.addAll(cacheFiles);
-
-		})
-	);
-
-
-});
-
-const cacheFiles = [
+ const cacheFiles = [
 	'/',
 	'/index.html',
 	'/restaurant.html',
@@ -34,11 +21,18 @@ const cacheFiles = [
 	'/img/9.jpg',
 	'/img/10.jpg'
 ];
-
-self.addEventListener('activate', function(event) {
+console.log('Service Worker:Registered');
+ self.addEventListener('install', function (e) {
+ 	e.waitUntil(
+		caches.open('v1').then(function (cache) {
+			return cache.addAll(cacheFiles);
+ 		})
+	);
+ });
+ self.addEventListener('activate', function(event) {
 	event.waitUntil(
-		
-		then(function(cacheNames) {
+		caches.keys()
+		.then(function(cacheNames) {
 			return Promise.all(
 				cacheNames.filter(function(cacheName) {
 					return cacheName.startsWith('restaurant-') &&
@@ -50,12 +44,14 @@ self.addEventListener('activate', function(event) {
 		})
 	);
 })
-
-self.addEventListener('fetch', function(event) {
+ self.addEventListener('fetch', function(event) {
 	event.respondWith(
 		caches.match(event.request)
-		then(function(response) {
+		.then(function(response) {
 			return response || fetch(event.request);
 		})
 	);
-});
+})
+
+
+

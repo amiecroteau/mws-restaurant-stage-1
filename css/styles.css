@@ -7,6 +7,8 @@ body, td, th, p {
 	color: #333;
 	line-height: 1.5;
  display: grid | inline-grid;
+	 max-width: 100%;
+    overflow-x: hidden;
 }
 body {
 	background-color: #fdfdfd;
@@ -282,8 +284,11 @@ nav h1 a {
 }
 
 /*----Media Queries --*/
-@media only screen and (min-width: 0px) and (max-width:780px) {
-
+@media only screen and (min-width: 0px) and (max-width:750px) {
+	body{
+		max-width: 95%;
+		overflow-x: hidden;
+	}
 	.inside #map-container{
 		width:100%;
 		height:30%;
@@ -308,6 +313,7 @@ nav h1 a {
 	.inside #restaurant-container{
 		width:100%;
 		max-height:auto;
+		max-width: 100%;
 		display:flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -317,7 +323,7 @@ nav h1 a {
 		order: 1;
 	}
 	
-
+	
 	
 	
 	.inside #reviews-container{

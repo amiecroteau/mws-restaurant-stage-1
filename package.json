@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "yarn": "^1.10.1"
   },
   "resolutions": {
     "warning": "4.0.2"
